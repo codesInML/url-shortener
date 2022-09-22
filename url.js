@@ -7,6 +7,10 @@ const URL = require("./model");
 const router = Router();
 
 router.get("/", (req, res) => {
+  console.log({
+    error: false,
+    message: "Welcome to kwaba URL shortener service 🔥",
+  });
   return res.status(200).json({
     error: false,
     message: "Welcome to kwaba URL shortener service 🔥",
