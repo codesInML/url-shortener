@@ -6,6 +6,13 @@ const URL = require("./model");
 
 const router = Router();
 
+router.get("/", (req, res) => {
+  return res.status(200).json({
+    error: false,
+    message: "Welcome to kwaba URL shortener service 🔥",
+  });
+});
+
 router.get("/:code", async (req, res) => {
   try {
     const url = await URL.findOne({ urlCode: req.params.code });
@@ -15,7 +22,10 @@ router.get("/:code", async (req, res) => {
       url.save();
       console.log(url);
       return res.redirect(url.longUrl);
-    } else return res.status(404).send("Invalid code");
+    } else {
+      console.log("Invalid code");
+      return res.status(404).send("Invalid code");
+    }
   } catch (error) {
     console.error(error);
     return res.status(500).send("server error");
@@ -29,12 +39,14 @@ router.post("/api/url/shorten", async (req, res) => {
     const urlCode = shortID.generate();
 
     if (!validUrl.isUri(longUrl)) {
+      console.log({ error: true, message: "Please provide a valid URL" });
       return res
         .status(400)
         .json({ error: true, message: "Please provide a valid URL" });
     }
 
     if (!validUrl.isUri(baseUrl)) {
+      console.log({ error: true, message: "Invalid Base Url" });
       return res.status(400).json({ error: true, message: "Invalid Base Url" });
     }
 
