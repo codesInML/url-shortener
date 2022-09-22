@@ -8,6 +8,10 @@ const PORT = process.env.PORT;
 app.use(express.json({ extended: false }));
 
 app.use("/", require("./url"));
+app.use("*", (req, res) => {
+  console.log({ error: true, message: "Route not found" });
+  return res.status(404).json({ error: true, message: "Route not found" });
+});
 
 app.listen(PORT, async () => {
   try {

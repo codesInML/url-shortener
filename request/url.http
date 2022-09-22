@@ -1,6 +1,10 @@
+### SHORTEN URL ROUTE
 POST http://localhost:5000/api/url/shorten
 Content-Type: application/json
 
 {
     "url": "https://www.amazon.com/?&tag=googleglobalp-20&ref=pd_sl_7nnedyywlk_e&adgrpid=82342659060&hvpone=&hvptwo=&hvadid=585475370855&hvpos=&hvnetw=g&hvrand=9480621534449484650&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1010294&hvtargid=kwd-10573980&hydadcr=2246_13468515&gclid=Cj0KCQjw7KqZBhCBARIsAI-fTKLoQAfti2K121d2-ufZQjMb6KZZs8srCCsYWoJ8JGcGBO_QlaUv-4MaAlWgEALw_wcB"
 }
+
+### HOME ROUTE
+GET http://localhost:5000/akdkla/aldkakamdla
