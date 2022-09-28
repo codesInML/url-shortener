@@ -1,7 +1,11 @@
 const { Router } = require("express");
 const validUrl = require("valid-url");
-const shortID = require("shortid");
+const { customAlphabet } = require("nanoid");
 
+const nanoid = customAlphabet(
+  "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+  9
+);
 const URL = require("./model");
 
 const router = Router();
@@ -40,7 +44,7 @@ router.post("/api/url/shorten", async (req, res) => {
   try {
     const { url: longUrl } = req.body;
     const baseUrl = process.env.BASE_URL;
-    const urlCode = shortID.generate();
+    const urlCode = nanoid();
 
     if (!validUrl.isUri(longUrl)) {
       console.log({ error: true, message: "Please provide a valid URL" });
