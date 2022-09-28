@@ -1,10 +1,10 @@
 ### SHORTEN URL ROUTE
-POST https://k-w-b.onrender.com/api/url/shorten
+POST http://localhost:5000/api/url/shorten
 Content-Type: application/json
 
 {
-    "url": "https://www.amazon.com/s?i=fashion-womens-intl-ship&bbn=16225018011&rh=n%3A16225018011%2Cn%3A1040660%2Cn%3A1045024&pd_rd_r=b8ad9de3-c8f0-41d3-a644-13b0816dd601&pd_rd_w=FItKX&pd_rd_wg=TWUQb&pf_rd_p=6a92dcea-e071-4bb9-866a-369bc067390d&pf_rd_r=4KSTBENEME2PG8G4V0PY&qid=1646786470&rnid=1040660&ref=pd_gw_unk"
+    "url": "https://cloud.mongodb.com/v2/632b328c37519f138fdd3874#metrics/replicaSet/632b348beeb8063a3465d4dc/explorer/test/urls/find"
 }
 
 ### HOME ROUTE
-GET https://k-w-b.onrender.com/
+GET http://localhost:5000/
